@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-10">
+      <h1 class="text-center mb-5"><%= @restaurant.name %></h1>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">Address</th>
+            <td><%= @restaurant.address %></td>
+          </tr>
+          <tr>
+            <th scope="row">Phone Number</th>
+            <td><%= @restaurant.phone_number %></td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td><%= @restaurant.category %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="list-group mt-5">
+        <% @restaurant.reviews.each do |review| %>
+          <li class="list-group-item mb-3">
+            <small class="text-muted">
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p class="mt-2"><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
+
+      <%= simple_form_for [@restaurant, @review], html: { class: "mt-5" } do |f| %>
+        <%= f.input :rating, collection: 0..5, label: "Rating", input_html: { class: "form-control mb-3" } %>
+        <%= f.input :content, label: "Review", input_html: { class: "form-control mb-3", rows: 5 } %>
+        <%= f.submit "Submit Review", class: 'btn btn-primary' %>
+      <% end %>
+      <%= link_to "See all restaurants", restaurants_path, class: "d-block mt-5 text-center" %>
+    </div>
+  </div>
+</div>

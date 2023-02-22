@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap');
+
+/* Body */
+/* Font */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+/* Background */
+body {
+  background-color: #f7f7f7;
+}
+
+.container {
+  margin: 0 auto; /* This centers the container horizontally */
+  padding-top: 50px; /* This adds some space at the top of the container */
+}
+
+/* Header */
+h1 {
+  font-weight: 900;
+  font-size: 48px;
+  color: #333333;
+  text-align: center;
+}
+
+/* Table */
+.table {
+  border: none;
+}
+
+.table td,
+.table th {
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555555;
+}
+
+.table th {
+  width: 25%;
+  text-align: right;
+}
+
+/* Review List */
+.list-group-item {
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.list-group-item small {
+  color: #f65c78;
+}
+
+.list-group-item p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555555;
+}
+
+/* Review Form */
+.form-control {
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 600;
